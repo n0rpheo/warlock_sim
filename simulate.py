@@ -1,6 +1,10 @@
 from bosses.targetdummy import TargetDummy
 from classes.warlock import Warlock
 
+####################
+####################
+####################
+
 warlock_talents = {"ImprovedLifeTap": 2,        # Max 2
                    "Nightfall": 0,              # Max 2
                    "ShadowMastery": 0,          # Max 5
@@ -12,20 +16,24 @@ warlock_talents = {"ImprovedLifeTap": 2,        # Max 2
                    "Ruin": 1                    # Max 1
                    }
 
-raid_buffs = {"BoK": True,
-              "BoW": True,
-              "GotW": True,
-              "AI": True}
+raid_buffs = {"BoK": True,  # Blessing of Kings
+              "BoW": True,  # Blessing of Wisdom | not implemented yet
+              "GotW": True, # Gift of the Wild
+              "AI": True}   # Arcane Intellect
 
-item_stats = {"intelligence": 113,
-              "spell_crit": 3.0,
-              "spell_hit": 0.0,
-              "spell_damage": 247}
+item_stats = {"intelligence": 113,  # Bonus Int from items, enchants, ...
+              "spell_crit": 3.0,    # Bonus crit directly from items (no base crit, talents, int-crit,..)
+              "spell_hit": 0.0,     # Bonus spell-hit
+              "spell_damage": 247}  # Bonus spell damgage (include shadow spell damage)
 
-iteration_time = 0.01
 simtime = 300          # combat time in seconds
 num_passes = 1000
 
+####################
+####################
+####################
+
+iteration_time = 0.01
 player = Warlock(base_time=iteration_time,
                  talents=warlock_talents,
                  raid_buffs=raid_buffs,
